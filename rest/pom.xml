@@ -2,14 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>rest</artifactId>
+
     <parent>
         <groupId>com.tinqinacademy.admin</groupId>
         <artifactId>admin</artifactId>
         <version>${revision}</version>
     </parent>
-    <groupId>com.tinqinacademy.admin</groupId>
-    <artifactId>rest</artifactId>
-    <version>${revision}</version>
 
     <properties>
         <java.version>21</java.version>
@@ -30,12 +29,13 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
+        <finalName>admin</finalName>
             <plugins>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <configuration>
+                        <mainClass>com.tinqinacademy.admin.rest.AdminApplication</mainClass>
                         <excludes>
                             <exclude>
                                 <groupId>org.projectlombok</groupId>
@@ -43,9 +43,15 @@
                             </exclude>
                         </excludes>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
-        </pluginManagement>
     </build>
 
 </project>
