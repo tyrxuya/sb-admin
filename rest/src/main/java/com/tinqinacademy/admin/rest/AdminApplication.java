@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = {"com.tinqinacademy.admin"})
 @EnableAdminServer
-public class RestApplication {
+public class AdminApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RestApplication.class, args);
+        SpringApplication.run(AdminApplication.class, args);
     }
 
 }
